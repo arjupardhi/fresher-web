@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /* ===========signup form css start ========*/
+
+
+
+ input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #6b6565;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #837e7e;
+    outline: none;
+}
+
+/*  ================style for all buttons ============*/
+.signcancelbtn, 
+.signupbtn {
+    background-color: #199294;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.signcancelbtn,
+.signupbtn:hover {
+    opacity: 1;
+}
+
+/* ===============styles for the cancel button============== */
+.signcancelbtn,
+.signupbtn {
+    padding: 14px 20px;
+    background-color: #079274;
+
+}
+
+/*======= cancel and signup buttons ========= */
+.signcancelbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+
+
+
+
+/* ======Modal Content/Box start ========= */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+
+}
+
+/*============ Style  horizontal ruler=========== */
+
+
+/* ============= Close Button style  (x)============ */
+.signupclose {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.signupclose:hover,
+.signupclose:focus {
+    color: #f8fafa;
+    cursor: pointer;
+} 
+
+/* ===========Clear floats  aply karne per============*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* ============= cancel button and signup button  responsive karne per========= */
+@media screen and (max-width: 300px) {
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+.signup-container {
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgb(9, 164, 123);
+    max-width: 500px;
+    width: 100%;
+    margin: 45px 300px;
+}
+
+ h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background: #000;
+
+}
+
+input:hover {
+    box-shadow: 0px 1px 8px blue;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+.toggle-btns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.toggle-btns button {
+    padding: 10px 20px;
+    background-color: #116a71;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.toggle-btns button:hover {
+    background-color: #0056b3;
+}
+/*================strat input fields=============== */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #ddd8d8;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/*  ================style for all buttons ============*/
+.button1 {
+    background-color: #174e50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.button1:hover {
+    opacity: 1;
+}
+
+/* ===============styles for the cancel button============== */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #ff6b01;
+
+}
+
+.signupbtn {
+    background-color: #094428;
+
+}
+.close {
+    color: #0e0d0d;
+    font-weight: bolder;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*======= cancel and signup buttons ========= */
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+
+/* ===========signup form css close ========*/
+
+
+</style>
+<body>
+    <div class="signupbody">
+        <div id="id-sec" class="modal">
+            <span onclick="document.getElementById('id-sec').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+            <div class="signup-container">
+                <div class="toggle-btns">
+                    <button onclick="showForm('student')">Student Signup</button>
+                    <button onclick="showForm('admin')">Admin Signup</button>
+                </div>
+                <div id="student-form" class="form-content" style="display:none;">
+    
+                    <form>
+                        <h1 style="color: #f55505; margin-bottom: 12px; font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Student Signup</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+                        <label  style="margin-top: 12px;" for="email"><b>User Name</b></label>
+                        <input type="text" placeholder="Enter Enrollment no" name="username" required>
+    
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="eml" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="pssw" required>
+    
+                        <label for="psw-repeat"><b>confirm Password</b></label>
+                        <input type="password" placeholder="confirm Password" name="psw-repeat" required>
+    
+                        <p>By creating an account you agree to our <a href="#" style="color:rgb(18, 128, 238)">Terms
+                                & Privacy</a>.
+                        </p>
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='block'"
+                                class="cancelbtn  button1">Cancel</button>
+                            <button type="submit" class="signupbtn  button1">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="admin-form" class="form-content" style="display:none;">
+    
+                    <form>
+                        <h1 style="color: #f55505; margin-bottom: 12px; font-size: 25px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Admin Signup</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+                        <label style="margin-top: 12px;"  for="email"><b>User Name</b></label>
+                        <input type="text" placeholder="enter admin name" name="usrname" required>
+    
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+                        <label for="psw-repeat"><b>confirm Password</b></label>
+                        <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+    
+                        <p>By creating an account you agree to our <a href="#" style="color:rgb(18, 128, 238)">Terms
+                                & Privacy</a>.
+                        </p>
+    
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id-sec').style.display='block'"
+                            class="cancelbtn  button1">Cancel</button>
+                            <button type="submit" class="signupbtn button1">Sign Up</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            function showForm(formType) {
+                document.getElementById('student-form').style.display = 'none';
+                document.getElementById('admin-form').style.display = 'none';
+                if (formType === 'student') {
+                    document.getElementById('student-form').style.display = 'block';
+                } else if (formType === 'admin') {
+                    document.getElementById('admin-form').style.display = 'block';
+                }
+            }
+        </script>
+        <script>
+            var modal = document.getElementById('id-sec');
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+ 
+         <!-- signup popop box   close-->
+    
+</body>
+</html>
